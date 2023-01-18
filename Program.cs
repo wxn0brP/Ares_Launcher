@@ -46,7 +46,7 @@ static class Program{
 				MessageBox.Show("Aby zainstalować Projekt Ares połącz się z Internetem!");
 				return false;
 			}
-			downloadFile(ConfigData.url+"Ares/Ares_lib.dll", "Ares_lib.dll");
+			downloadFile("https://projektares.tk/Ares/Ares_lib.dll", "Ares_lib.dll");
 			runDll("Ares_lib.dll", "Ares.Program");
 			if(File.Exists("Ares_lib.dll") && !File.Exists("instaled.txt")) File.Delete("Ares_lib.dll");
 			return false;
