@@ -15,6 +15,12 @@ static class Program{
 			runDll("update.dll", "update.update");
 			return;
 		}
+	    if(args.Length > 1){
+            if(Directory.Exists(args[0])){
+                Directory.SetCurrentDirectory(args[0]);
+                args = args.Skip(1).ToArray();
+            }
+        }
 		if(installAres()) runDll("Ares_lib.dll", "Ares.Program", string.Join("/;/", args));
     }    
 	
